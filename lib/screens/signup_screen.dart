@@ -21,7 +21,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
   // String name = "";
   // bool changeButton = false;
   var _formkey = GlobalKey<FormState>();
-
   // String? _nameError = null;
   bool _isVisible = false;
   @override
@@ -148,8 +147,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               .then((value) {
                             // print("Created New Account");
                             showToast1();
-                            BlocProvider.of<AppCubits>(context)
-                                .getWelcomePage();
+                            BlocProvider.of<AppCubits>(context).getSignIn();
                           });
                         }),
                   ),
@@ -190,6 +188,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   void showToast1() => Fluttertoast.showToast(
       msg: "Created New Account",
-      fontSize: 18,
+      fontSize: 16,
       backgroundColor: Colors.black54);
 }
